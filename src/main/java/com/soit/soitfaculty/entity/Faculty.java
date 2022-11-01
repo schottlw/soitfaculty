@@ -26,6 +26,8 @@ public class Faculty {
 	@Column(name="email")
 	private String email;
 	
+	//Set the Constructors
+	
 	public Faculty() {
 		
 	}
@@ -36,6 +38,8 @@ public class Faculty {
 		this.lastName = lastName;
 		this.email = email;
 	}
+	
+	//Set the Getters and Setters
 
 	public int getId() {
 		return id;
@@ -68,6 +72,8 @@ public class Faculty {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	//toString method 
 
 	@Override
 	public String toString() {
