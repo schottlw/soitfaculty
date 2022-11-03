@@ -23,6 +23,9 @@ public class Faculty {
 	@Column(name="last_name")
 	private String lastName;
 	
+	@Column(name="Title")
+	private String title;
+	
 	@Column(name="email")
 	private String email;
 	
@@ -39,6 +42,15 @@ public class Faculty {
 		this.email = email;
 	}
 	
+	public Faculty(int id, String firstName, String lastName, String title, String email) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.title = title;
+		this.email = email;
+	}
+
 	//Set the Getters and Setters
 
 	public int getId() {
@@ -73,10 +85,21 @@ public class Faculty {
 		this.email = email;
 	}
 	
-	//toString method 
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	
+	//Generate toString
+	
 
 	@Override
 	public String toString() {
-		return "Faculty [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
+		return "Faculty [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", title=" + title
+				+ ", email=" + email + "]";
 	}
 }
