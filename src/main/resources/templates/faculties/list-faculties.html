@@ -17,19 +17,21 @@
 <body>
 	<div class="container">
 		<h4>School of IT Faculty Directory</h4>
-		<hr> <!-- horizontal platform -->
+		<hr>
+		<!-- horizontal platform -->
 
 		<!-- Create button to add new Faculty -->
-		<a th:href="@{/Faculties/viewAddForm}" class="btn btn-dark">
-		Add New Faculty </a>
+		<a th:href="@{/Faculties/viewAddForm}" class="btn btn-dark"> Add
+			New Faculty </a>
 
-		<table class="table table-bordered">
+		<table class="table table-bordered table-dark">
 			<thead>
 				<tr class="bg-danger">
 					<th>First Name</th>
 					<th>Last Name</th>
 					<th>Title</th>
 					<th>Email</th>
+					<th>Update Info</th>
 				</tr>
 			</thead>
 
@@ -40,9 +42,22 @@
 					<td th:text="${theFaculty.lastName}" />
 					<td th:text="${theFaculty.title}" />
 					<td th:text="${theFaculty.email}" />
+					<td>
+						<!-- update button -->
+						<a th:href="@{/Faculties/viewUpdateForm(facultyId=${theFaculty.id})}"
+						class="btn btn-light btn-sm">
+						Update
+						</a>
+						
+						<!-- delete button -->
+						<a th:href="@{/Faculties/delete(facultyId=${theFaculty.id})}"
+						class="btn btn-danger btn-sm"onclick="if(!(confirm('Do you want to delete this Faculty?'))) return false">
+						Delete
+						</a>
+					</td>
 				</tr>
 			</tbody>
-
+			
 		</table>
 	</div>
 </body>
